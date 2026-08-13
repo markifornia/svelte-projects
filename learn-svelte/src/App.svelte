@@ -1,7 +1,14 @@
+<!-- logic -->
 <script>
-	let count = $state(0)
+	let title = 'Svelte'
 </script>
 
-<button onclick={() => count++}>
-	{count}
-</button>
+<!-- markup -->
+<h1>{title}</h1>
+
+<!-- styles -->
+<style>
+	h1 {
+		color: orangered;
+	}
+</style>
