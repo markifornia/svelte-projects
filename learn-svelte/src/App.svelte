@@ -1,14 +1,11 @@
-<!-- logic -->
 <script>
-	let title = 'Svelte'
+
+	let obj = {
+		src: 'image.gif',
+		alt: 'Person nods'
+	}
+
+	let lazy = false
 </script>
 
-<!-- markup -->
-<h1>{title}</h1>
-
-<!-- styles -->
-<style>
-	h1 {
-		color: orangered;
-	}
-</style>
+<img {...obj} loading={lazy ? 'lazy' : null} />
