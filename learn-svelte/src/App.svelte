@@ -1,14 +1,27 @@
 <script>
-	let color = 'orangered'
+	let content = `
+	<h1>Big banana exposed</h1>
+	<p>The gorillas inside the banana cartel speak out</p>
+	`
+
 </script>
 
-<h1 style="--color: {color}">Svelte</h1>
+<hgroup>
+	{@html content}
+</hgroup>
 
-<h1 style:--color={color}>Svelte</h1>
+<style lang="postcss">
+	hgroup global {
+		h1 {
+			text-transform: capitalize;
+		}
 
-<style>
-	h1 {
-		color: var(--color, #fff);
+		p {
+			color: orangered;
+		}
+	}
+
+	@keyframes -global-animation {
+		/* ... */
 	}
 </style>
-
