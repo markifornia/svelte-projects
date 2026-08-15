@@ -1,11 +1,14 @@
 <script>
-
-	let obj = {
-		src: 'image.gif',
-		alt: 'Person nods'
-	}
-
-	let lazy = false
+	let color = 'orangered'
 </script>
 
-<img {...obj} loading={lazy ? 'lazy' : null} />
+<h1 style="--color: {color}">Svelte</h1>
+
+<h1 style:--color={color}>Svelte</h1>
+
+<style>
+	h1 {
+		color: var(--color, #fff);
+	}
+</style>
+
