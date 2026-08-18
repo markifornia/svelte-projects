@@ -1,8 +1,15 @@
 <script>
-	let editor = $state.raw({
+	let editor = $state({
 		theme: 'dark',
 		content: '<h1>Svelte</h1>'
 	})
+
+	function saveEditorState() {
+		const editorState = structuredClone($state.snapshot(editor))
+		console.log(editorState);
+	}
+
+	saveEditorState();
 </script>
 
 <textarea
