@@ -1,17 +1,11 @@
 <script>
-	let { theme, content } = $state({
-		theme: 'dark',
-		content: '<h1>Svelte</h1>'
-	})
+	let count = $state(0)
+	let factor = $state(0)
+	let result = $derived(count * factor)
 </script>
 
-<textarea
-	class="editor"
-	value={content}
-	oninput={(e) => {
-		content = e.target.value
-	}}
-	spellcheck="false"
-></textarea>
-
-{@html content}
+<div>
+	<h1>{count} * factor = {result}</h1>
+	<button onclick={() => count++}>Count: {count}</button>
+	<button onclick={() => factor++}>Factor: {factor}</button>
+</div>
