@@ -1,11 +1,10 @@
 <script>
 	let count = $state(0)
-	let factor = $state(0)
-	let result = $derived(count * factor)
+	let max = $derived(count >= 4)
+
+	$inspect(max)
 </script>
 
 <div>
-	<h1>{count} * factor = {result}</h1>
-	<button onclick={() => count++}>Count: {count}</button>
-	<button onclick={() => factor++}>Factor: {factor}</button>
+	<button onclick={() => count++} disabled={max}>Count: {count}</button>
 </div>
