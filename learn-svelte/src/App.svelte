@@ -4,7 +4,7 @@
 
 <button onclick={() => open = !open} clas="btn">
 	<span>Item A</span>
-	<span class="trigger {open ? 'open': ''}">👈</span>
+	<span class="trigger" class:open>👈</span>
 </button>
 
 <style>
