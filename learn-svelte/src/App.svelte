@@ -1,19 +1,17 @@
 <script>
-	let open = $state(false)
+	let status = $state('closed')
 </script>
 
-<button onclick={() => open = !open} class="btn">
+<button class="btn">
 	<span>Item A</span>
-	<span class={['trigger', { open }]}>👈</span>
-</button>
-
+	<span class="trigger" data-status={status}>👈</span></button>
 <style>
 	.trigger {
 		display: inline-block;
 		transition: rotate 0.2s ease;
 
-		&.open {
-			rotate: -90deg;
+		&[data-status='open'] {
+			rotate: -0deg;
 		}
 	}
 </style>
