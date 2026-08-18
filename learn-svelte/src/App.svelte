@@ -1,27 +1,19 @@
 <script>
-	let content = `
-	<h1>Big banana exposed</h1>
-	<p>The gorillas inside the banana cartel speak out</p>
-	`
-
+	let open = $state(false)
 </script>
 
-<hgroup>
-	{@html content}
-</hgroup>
+<button onclick={() => open = !open} clas="btn">
+	<span>Item A</span>
+	<span class="trigger {open ? 'open': ''}">👈</span>
+</button>
 
-<style lang="postcss">
-	hgroup global {
-		h1 {
-			text-transform: capitalize;
-		}
+<style>
+	.trigger {
+		display: inline-block;
+		transition: rotate 0.2s ease;
 
-		p {
-			color: orangered;
-		}
+		&.open {
+		rotate: -90deg;
 	}
-
-	@keyframes -global-animation {
-		/* ... */
 	}
 </style>
