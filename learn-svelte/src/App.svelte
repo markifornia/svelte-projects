@@ -5,6 +5,16 @@
 	})
 </script>
 
-<textarea class="editor" value={editor.content} oninput={e => editor.content = e.target.value} spellcheck="false"></textarea>
+<textarea
+	class="editor"
+	value={editor.content}
+	oninput={(e) => {
+		editor = {
+			...editor,
+			content: e.target.value
+		}
+	}}
+	spellcheck="false"
+></textarea>
 
 {@html editor.content}
